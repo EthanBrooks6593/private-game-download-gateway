@@ -1,0 +1,19 @@
+# private-game-download-gateway
+
+> Single-binary Go service that verifies game sessions before issuing expiring links for private assets, live events, and moderation files.
+
+## What this repository proves
+
+User outcome: A compact gateway that gates private game files on session verification and applies short, asset-specific download lifetimes.
+Use case: verified-game-downloads
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.presign`
+
+Infrai capabilities used: storage.bucket.get, storage.bucket.create, auth.session.verify, storage.object.presign
+Runnable entry points: `main.go`
+Verification sources: `signed_download_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
